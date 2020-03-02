@@ -2,7 +2,7 @@ FROM zonzpoo/ubuntu:18.04
 
 LABEL maintainer="PlatON Node Docker Maintainers <golang.py@gmail.com>"
 
-ENV PlatON-Go_VERSION release-0.9.0
+ENV PLATONGO_VERSION release-0.9.0
 
 RUN set -x \
     && apt update \
@@ -13,7 +13,7 @@ RUN set -x \
     && mkdir -pv ~/platon-node/data 
 
 WORKDIR /root/platon-node
-RUN git clone -b ${PlatON-Go_VERSION} https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+RUN git clone -b ${PLATONGO_VERSION} https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 
 WORKDIR /root/platon-node/PlatON-Go
 RUN git branch \
